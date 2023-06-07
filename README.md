@@ -31,11 +31,11 @@ Please refer to the individual project README.md files for detailed documentatio
 
 ## Built With
 
--   ![https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Vite-Dark.svg](https://vitejs.dev/)
--   ![https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/React-Dark.svg](https://react.dev/)
--   ![https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/MaterialUI-Dark.svg](https://mui.com/)
--   [Prettier](https://prettier.io/)
--   [Framer motion]([https://ant.design/](https://www.framer.com/motion/))
+ <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/React-Dark.svg"  width="40px" height="40px">
+ <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Vite-Dark.svg"  width="40px" height="40px">
+ <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/MaterialUI-Dark.svg"  width="40px" height="40px">
+ - Framer Motion
+ 
 
 
 
