@@ -34,17 +34,16 @@ Please refer to the individual project README.md files for detailed documentatio
 -   [https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Vite-Dark.svg](https://vitejs.dev/)
 -   [https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/React-Dark.svg](https://react.dev/)
 -   [https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/MaterialUI-Dark.svg](https://mui.com/)
--   [https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Redux.svg](https://redux-toolkit.js.org/)
 -   [Prettier](https://prettier.io/)
--   [Ant Design](https://ant.design/)
--   [Yup](https://www.npmjs.com/package/yup)
+-   [Framer motion]([https://ant.design/](https://www.framer.com/motion/))
+
 
 ### Installation and Setup
 
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/larssandell/Holidaze_semester-4.git
+git clone https://github.com/larssandell/Portfolio_2.git
 ```
 
 2. Install the dependencies:
@@ -75,4 +74,4 @@ npm run test
 
 ## Contributing
 
-The Holidaze Accommodation Booking Application is a school exam. And must not be contributed.
+My portfolio is a school exam. And must not be contributed. But feel free to come with suggestions
