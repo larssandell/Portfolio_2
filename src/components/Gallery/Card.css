@@ -1,0 +1,16 @@
+.gallery {
+    width: 25%;
+    min-width: 300px;
+    max-width: 600px;
+    position: relative;
+    margin: 20px;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: red;
+}
+
+.gallery::before {
+    content: '';
+    display: block;
+    padding-bottom: calc((5 / 4 * 100%));
+}
