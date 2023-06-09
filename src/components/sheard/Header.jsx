@@ -3,36 +3,61 @@ import {
     AppBar,
     Box,
     Container,
-    FormControlLabel,
-    Switch,
+    Drawer,
+    Grid,
+    IconButton,
+    List,
+    ListItemButton,
+    ListItemText,
+    useMediaQuery,
+    useTheme,
 } from '@mui/material';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import Brightness2RoundedIcon from '@mui/icons-material/Brightness2Rounded';
+
 import logoBlack from '../../assets/lars-logov2-black-final.svg';
 import logoWhite from '../../assets/lars-logov2-white-final.svg';
 import './Header.css';
 import { ColorModeContext } from '../../Theme/Theme';
-import Navigation from '../Navigation';
+import { RiMenu3Fill } from 'react-icons/ri';
+import Nav from '../nav/Nav';
+import { Link } from 'react-scroll';
+import bgImg from '../../assets/contact2.svg';
+import { useEffect } from 'react';
 
 function Header() {
     const [changeNavBar, setChangeNavBar] = useState(false);
     const { mode, toggleMode } = useContext(ColorModeContext);
-    // const [selected, setSelected] = useState(0);
-    // console.log(selected);
+    const [open, setOpen] = useState(false);
 
-    // console.log(mode);
+    let drawerDuration = 100;
+    let drawerOffset = -90;
+
+    const toggleMenuDrawer = (e) => {
+        if (e.type === 'keydown' && (e.key === 'tab' || e.key === 'shift')) {
+            return;
+        }
+        setOpen(!open);
+    };
+    const closeDrawer = () => {
+        setOpen(false);
+    };
 
     const scrollNav = () => {
         if (window.scrollY >= 90) {
             setChangeNavBar(true);
-            // console.log('under 100');
         } else {
             setChangeNavBar(false);
-            // console.log('over 100');
         }
     };
+    const theme = useTheme();
 
     window.addEventListener('scroll', scrollNav);
+    const medium = useMediaQuery(theme.breakpoints.up('md'));
+
+    useEffect(() => {
+        if (medium) {
+            setOpen(false);
+        }
+    }, [medium]);
 
     return (
         <>
@@ -56,18 +81,78 @@ function Header() {
                         alignItems: 'center',
                     }}
                 >
-                    <Box>
-                        <Box
-                            component='img'
-                            src={mode ? logoWhite : logoBlack}
-                            alt='Site Logo L and an S'
-                            sx={{ height: '60px', width: 'auto' }}
-                        />
-                    </Box>
-                    <Box sx={{ flex: 1 }} />
-                    <Navigation />
+                    <Grid
+                        container
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                        }}
+                    >
+                        <Grid item>
+                            <Box
+                                component='img'
+                                src={mode ? logoWhite : logoBlack}
+                                alt='Site Logo L and an S'
+                                sx={{ height: '60px', width: 'auto' }}
+                            />
+                        </Grid>
+                        <Grid item>
+                            <Box
+                                sx={{
+                                    display: { xs: 'none', md: 'block' },
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <Nav />
+                            </Box>
+                        </Grid>
+                        <Grid
+                            item
+                            sx={{
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                display: 'flex',
+                            }}
+                        >
+                            <IconButton
+                                aria-label='hamburger icon'
+                                aria-controls='hamburger'
+                                aria-haspopup='true'
+                                onClick={toggleMenuDrawer}
+                                disableRipple
+                                sx={{
+                                    display: {
+                                        xs: 'flex',
+                                        md: 'none',
+                                    },
+                                    '& :hover': {
+                                        color: '#bf5b04',
+                                    },
+                                }}
+                            >
+                                <RiMenu3Fill
+                                    fontSize='40px'
+                                    sx={{
+                                        // alignItems: 'center',
+                                        backgroundColor: 'transparent',
+                                        display: 'flex',
+                                    }}
+                                />
+                            </IconButton>
+                        </Grid>
+                    </Grid>
 
-                    <Box sx={{ flex: 1 }} />
+                    <Box sx={{ display: 'flex', flexDirection: 'reverse' }} />
+
+                    {/* <Box
+                        sx={{
+                            flex: 1,
+                            display: { xs: 'flex', md: 'none' },
+                            flexDirection: 'end',
+                        }}
+                    /> */}
+
                     {/* <FormControlLabel
                         control={
                             <Switch
@@ -90,6 +175,73 @@ function Header() {
                             )
                         }
                     /> */}
+
+                    {/* Drawer */}
+                    <Drawer
+                        anchor='right'
+                        open={open}
+                        onClose={closeDrawer}
+                        PaperProps={{
+                            sx: {
+                                backgroundImage: `url(${bgImg})`,
+                                backgroundPosition: 'contain',
+                                width: '40%',
+                            },
+                        }}
+                    >
+                        <Box>
+                            <List>
+                                <ListItemButton sx={{ color: 'white' }}>
+                                    <Link
+                                        to='banner'
+                                        spy={true}
+                                        smooth={true}
+                                        offset={drawerOffset}
+                                        duration={drawerDuration}
+                                        onClick={closeDrawer}
+                                    >
+                                        <ListItemText primary={'Home'} />
+                                    </Link>
+                                </ListItemButton>
+                                <ListItemButton sx={{ color: 'white' }}>
+                                    <Link
+                                        to='about'
+                                        spy={true}
+                                        smooth={true}
+                                        offset={drawerOffset}
+                                        duration={drawerDuration}
+                                        onClick={closeDrawer}
+                                    >
+                                        <ListItemText primary={'About'} />
+                                    </Link>
+                                </ListItemButton>
+                                <ListItemButton sx={{ color: 'white' }}>
+                                    <Link
+                                        to='projects'
+                                        spy={true}
+                                        smooth={true}
+                                        offset={drawerOffset}
+                                        duration={drawerDuration}
+                                        onClick={closeDrawer}
+                                    >
+                                        <ListItemText primary={'Projects'} />
+                                    </Link>
+                                </ListItemButton>
+                                <ListItemButton sx={{ color: 'white' }}>
+                                    <Link
+                                        to='contact'
+                                        spy={true}
+                                        smooth={true}
+                                        offset={drawerOffset}
+                                        duration={drawerDuration}
+                                        onClick={closeDrawer}
+                                    >
+                                        <ListItemText primary={'Contact'} />
+                                    </Link>
+                                </ListItemButton>
+                            </List>
+                        </Box>
+                    </Drawer>
                 </Container>
             </AppBar>
         </>

@@ -2,23 +2,6 @@ import { Box, Container, Grid, Typography } from '@mui/material';
 // import SectionContainer from '../components/sectionComp/SectionContainer';
 import profilePicture from '../assets/lars-profil.jpg';
 import Section from '../components/sectionComp/Section';
-import {
-    SiReact,
-    SiCss3,
-    SiMui,
-    SiRedux,
-    SiBootstrap,
-    SiSass,
-    SiGithub,
-    SiNetlify,
-    SiFigma,
-    SiAdobexd,
-    SiAdobeillustrator,
-    SiAdobephotoshop,
-    SiCypress,
-    SiJavascript,
-} from 'react-icons/si';
-import { DiHtml5, DiNodejsSmall } from 'react-icons/di';
 import FrontEnd from '../components/knowledge/FrontEnd';
 import Additional from '../components/knowledge/Additional';
 
@@ -27,7 +10,7 @@ const About = (props) => {
 
     return (
         <Container maxWidth='xl' sx={{ marginBottom: '50px' }} {...props}>
-            <Section title='About me' align='left'>
+            <Section title={props.title} align='left'>
                 <Grid
                     container
                     spacing={4}

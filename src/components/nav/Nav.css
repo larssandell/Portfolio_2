@@ -1,0 +1,19 @@
+.nav__span {
+    color: #fff;
+    border-radius: 5px;
+}
+
+.nav__span:hover {
+    color: #bf5b04;
+}
+
+.header__nav .TouchRipple {
+    background-color: #fff;
+}
+.header__nav .MuiTouchRipple-child {
+    background-color: #fff;
+}
+.header__nav .MuiButtonBase-root {
+    border-radius: 10px;
+    background-color: 'transparent';
+}

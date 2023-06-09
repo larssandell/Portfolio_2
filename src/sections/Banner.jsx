@@ -5,13 +5,13 @@ import {
     Typography,
     useMediaQuery,
 } from '@mui/material';
-import SectionContainer from '../components/sectionComp/SectionContainer';
 import { motion } from 'framer-motion';
 import Typewriters from '../components/TypeWriters';
-import Skiller from '../components/skiller';
 import Section from '../components/sectionComp/Section';
 import { useTheme } from '@emotion/react';
 import bgImage from '../assets/magicpattern-grid-pattern.png';
+import PDF from '../assets/CV-Lars_Sandell.pdf';
+import { StyledBtn } from '../Theme/muiStyles';
 
 function Banner() {
     const theme = useTheme();
@@ -20,7 +20,6 @@ function Banner() {
     return (
         <Container maxWidth='xl' sx={{ backgroundImage: `url(${bgImage})` }}>
             <Section
-                id='banner'
                 sx={{
                     minHeight: '100vh',
                     display: 'flex',
@@ -52,7 +51,7 @@ function Banner() {
                                 fontSize: '25px',
                             }}
                         >
-                            Future Front-end developer!
+                            Front-end developer!
                         </Typography>
                         <Typography
                             component={motion.p}
@@ -61,7 +60,7 @@ function Banner() {
                             variant='h6'
                             style={{ marginBottom: '0' }}
                         >
-                            Looking for work
+                            Currently looking for work.
                         </Typography>
                         <Typography
                             component={motion.p}
@@ -73,8 +72,8 @@ function Banner() {
                             Based in Kristiansand, Norway.
                         </Typography>
                         <motion.div custom={5}>
-                            <a href='../assets/CV-Lars_Sandell.pdf' download>
-                                <Button>Resume</Button>
+                            <a href={PDF} rel='noreferrer' target='_blank'>
+                                <StyledBtn>Resume</StyledBtn>
                             </a>
                         </motion.div>
                     </Grid>

@@ -1,111 +1,129 @@
-import { Box, Button, Container, Grid, Typography } from '@mui/material';
+import {
+    Box,
+    Card,
+    CardActions,
+    CardContent,
+    Container,
+    Grid,
+    Typography,
+} from '@mui/material';
 import Section from '../components/sectionComp/Section';
-import { IoMdMail, IoLogoLinkedin } from 'react-icons/io';
-import bgImage from '../assets/grid-final.png';
 import { openInNewTab } from '../constant';
+import backImg from '../assets/contact2.svg';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { StyledBtn } from '../Theme/muiStyles';
 
 function Contact(props) {
     const { title, align, id, ...rest } = props;
+
+    const sendMail = () => {
+        window.location.href = 'mailto:larssandell@outlook.com';
+    };
+
     return (
-        <Container maxWidth='xl' sx={{ marginBottom: '50px' }} {...rest}>
-            <Section title='Contact' align='left' id='contact'>
-                <Box sx={{ marginBottom: 4 }}>
-                    <Typography variant='h5'>
-                        Feel free to contact me if you want to know more
+        <Container maxWidth='xl' {...rest}>
+            <Section title='Contact' align='left'>
+                <Box>
+                    <Typography
+                        variant='h4'
+                        sx={{
+                            transform: 'translateY(100%)',
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                        }}
+                    >
+                        Get in touch.
                     </Typography>
                 </Box>
-                <Grid
-                    container
-                    gap={15}
-                    sx={{ display: 'flex', justifyContent: 'center' }}
+                <Box
+                    sx={{
+                        minHeight: '400px',
+                        width: '100%',
+                        display: 'flex',
+                        padding: 4,
+                        backgroundImage: `url(${backImg})`,
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                    }}
                 >
                     <Grid
-                        item
+                        container
+                        spacing={4}
                         sx={{
-                            boxShadow: 4,
-                            backgroundColor: 'background.default',
-                            borderRadius: '5px',
-                            width: '300px',
+                            padding: '0',
+                            marginTop: '30px',
                             display: 'flex',
                             justifyContent: 'center',
-                            padding: 4,
-                            flexDirection: 'column',
-                            backgroundImage: `url(${bgImage})`,
-                            backgroundSize: 'contain',
-                            backgroundRepeat: 'no-repeat',
                         }}
                     >
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                flexDirection: 'column',
-                                textAlign: 'center',
-                            }}
-                        >
-                            <Box>
-                                <IoMdMail size={50} />
-                            </Box>
-                            <Typography
-                                variant='h6'
-                                sx={{ marginBottom: 5, marginTop: 3 }}
+                        <Grid item>
+                            <Card
+                                sx={{
+                                    backgroundColor: 'rgba(26, 26, 26, 0.7)',
+                                }}
                             >
-                                larssandell@outlook.com
-                            </Typography>
-                            <Button
-                                href='mailto:larssandell@outlook.com'
-                                variant='outlined'
+                                <CardContent>
+                                    <Box>
+                                        <AlternateEmailIcon
+                                            sx={{
+                                                width: '40px',
+                                                height: 'auto',
+                                            }}
+                                        />
+                                    </Box>
+                                    <Typography variant='h5' component='div'>
+                                        Get in touch on mail
+                                    </Typography>
+                                    <Typography sx={{ mb: 1.5 }} color='#fff'>
+                                        larssandell@outlook.com
+                                    </Typography>
+                                </CardContent>
+                                <CardActions>
+                                    <StyledBtn onClick={sendMail} fullWidth>
+                                        here
+                                    </StyledBtn>
+                                </CardActions>
+                            </Card>
+                        </Grid>
+                        <Grid item>
+                            <Card
+                                sx={{
+                                    backgroundColor: 'rgba(26, 26, 26, 0.7)',
+                                }}
                             >
-                                Mail
-                            </Button>
-                        </Box>
+                                <CardContent>
+                                    <Box>
+                                        <LinkedInIcon
+                                            sx={{
+                                                width: '40px',
+                                                height: 'auto',
+                                            }}
+                                        />
+                                    </Box>
+                                    <Typography variant='h5' component='div'>
+                                        Get in touch on Linkedin
+                                    </Typography>
+                                    <Typography sx={{ mb: 1.5 }} color='#fff'>
+                                        Send me a message.
+                                    </Typography>
+                                </CardContent>
+                                <CardActions>
+                                    <StyledBtn
+                                        onClick={() =>
+                                            openInNewTab(
+                                                'https://www.linkedin.com/in/lars-sandell/'
+                                            )
+                                        }
+                                        fullWidth
+                                    >
+                                        Here
+                                    </StyledBtn>
+                                </CardActions>
+                            </Card>
+                        </Grid>
                     </Grid>
-                    <Grid
-                        item
-                        sx={{
-                            boxShadow: 4,
-                            backgroundColor: 'background.default',
-                            borderRadius: '5px',
-                            width: '300px',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            padding: 4,
-                            flexDirection: 'column',
-                            backgroundImage: `url(${bgImage})`,
-                            backgroundSize: 'contain',
-                            backgroundRepeat: 'no-repeat',
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                flexDirection: 'column',
-                                textAlign: 'center',
-                            }}
-                        >
-                            <Box>
-                                <IoLogoLinkedin size={50} />
-                            </Box>
-                            <Typography
-                                variant='h6'
-                                sx={{ marginBottom: 5, marginTop: 3 }}
-                            >
-                                Send a message
-                            </Typography>
-                            <Button
-                                variant='outlined'
-                                onClick={() =>
-                                    openInNewTab(
-                                        'https://www.linkedin.com/in/lars-sandell/'
-                                    )
-                                }
-                            >
-                                Mail
-                            </Button>
-                        </Box>
-                    </Grid>
-                </Grid>
+                </Box>
             </Section>
         </Container>
     );

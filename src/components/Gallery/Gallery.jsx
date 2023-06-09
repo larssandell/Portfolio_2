@@ -1,21 +1,15 @@
 // import { projectList } from '../../data';
-import { Box, Container, Grid, Stack } from '@mui/material';
+import { Grid } from '@mui/material';
 import './Gallery.css';
 import Card from './Card';
-import { projectList } from '../../data';
-import Section from '../sectionComp/Section';
 import Animation from './Animation';
 
 function Gallery(props) {
     const { data, openModal, ...rest } = props;
-    // console.log(props, 'from props Gallery');
     return (
-        <Grid
-            container
-            sx={{ display: 'flex', justifyContent: 'center', gap: '10px' }}
-        >
+        <Grid container spacing={5}>
             {data.map((item) => (
-                <Grid item key={item.id}>
+                <Grid item key={item.id} xs={12} sm={6} md={4}>
                     <Card data={item} open={openModal} />
                 </Grid>
             ))}

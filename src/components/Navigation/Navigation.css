@@ -1,4 +1,4 @@
-.TabIndicatorProps {
+/* .TabIndicatorProps {
     content: '';
     position: absolute;
     width: 100%;
@@ -12,9 +12,7 @@
     transition: all 0.5s ease-out;
 }
 
-/* .OnScrollNav {
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.63);
-} */
+
 .TabIndicatorProps::after {
     content: '';
     position: absolute;
@@ -26,4 +24,4 @@
     background-color: #0087ca;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
-}
+} */

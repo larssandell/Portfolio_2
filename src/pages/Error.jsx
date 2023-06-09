@@ -1,5 +1,7 @@
 import { Box, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { StyledBtn } from '../Theme/muiStyles';
+import bgImg from '../assets/contact2.svg';
 
 function Error() {
     const navigate = useNavigate();
@@ -13,15 +15,19 @@ function Error() {
                 alignItems: 'center',
                 gap: 2,
                 pt: 15,
+                height: '90vh',
+                backgroundImage: `url(${bgImg})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
             }}
         >
-            <Typography variant='h3' sx={{ fontSize: 100 }}>
+            <Typography variant='h3' sx={{ fontSize: 120 }}>
                 404
             </Typography>
-            <Typography variant='p'>This is a one page site</Typography>
-            <Button variant='contained' onClick={() => navigate('/')}>
-                Back home
-            </Button>
+            <Typography variant='p' sx={{ fontSize: 30 }}>
+                This is a one page site
+            </Typography>
+            <StyledBtn onClick={() => navigate('/')}>Back home</StyledBtn>
         </Box>
     );
 }
