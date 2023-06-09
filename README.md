@@ -66,11 +66,6 @@ npm run build
 npm run dev
 ```
 
-5. Vitest
-
-```bash
-npm run test
-```
 
 ## Contributing
 
