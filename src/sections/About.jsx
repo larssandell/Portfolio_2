@@ -38,15 +38,16 @@ const About = (props) => {
                                 },
                             }}
                         >
-                            I'm currently studying at Noroff Norway. The course
-                            I'm taking is Front-end Dev. And I have earlier
-                            worked as an IT-consultant with hardware,
-                            installations, deployment and management. I wanted
-                            to try something different but in the IT branch.
-                            Programming and development have always interested
-                            me, so, the choice was a no "brainer". I'm now soon
-                            finished with my first year and looking forward to
-                            the next.
+                            Having successfully completed my studies, I proudly
+                            reflect on my academic journey. I pursued my
+                            education at Noroff Norway, Front-end development. I
+                            have earlier worked as an IT-consultant with
+                            hardware, installations, deployment and management.
+                            I wanted to try something different but in the IT
+                            branch. Programming and development have always
+                            interested me, so, the choice was a no "brainer".
+                            I'm now soon finished with my first year and looking
+                            forward to the next.
                         </Typography>
                     </Grid>
                     <Grid
