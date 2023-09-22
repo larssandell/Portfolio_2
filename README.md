@@ -65,7 +65,7 @@ npm run build
 ```bash
 npm run dev
 ```
-
+Live : [here](https://musical-monstera-848adf.netlify.app/)
 
 ## Contributing
 
